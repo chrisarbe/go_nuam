@@ -1,0 +1,21 @@
+name: dependencies analysis
+
+on: push
+
+jobs:
+    dependencies_analysis:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout repository
+              uses: actions/chackout@v4
+            - name: analysis and report
+              run: |
+                echo -e "Content go.mod\n" > dependenciesAnalysis.txt
+                cat go.mod >> dependenciesAnalysis.txt
+                echo -e "\nContent go.sum\n" >> dependenciesAnalysis.txt
+                cat go.sum >> dependenciesAnalysis.txt
+            - name: save report
+              uses: actions/upload-artifact@v4
+              with:
+                name: dependencies-report
+                path: ./dependenciesAnalysis.txt
