@@ -8,8 +8,11 @@ jobs:
         steps:
             - name: checkout repository
               uses: actions/checkout@v4
+            - name: setup go
+              uses: actions/setup-go@v5
             - name: analysis and report
               run: |
+                go mod tidy
                 echo -e "Content go.mod\n" > dependenciesAnalysis.txt
                 cat go.mod >> dependenciesAnalysis.txt
                 echo -e "\nContent go.sum\n" >> dependenciesAnalysis.txt
