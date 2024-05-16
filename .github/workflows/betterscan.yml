@@ -11,8 +11,11 @@ jobs:
             - run: |
                 echo "Checking out repository"
                 ls -la
+            - name: Set up Docker Buildx
+              uses: docker/setup-buildx-action@v3
             - name: Betterscan Scan
               run: |
                 echo "Running Betterscan"
-                curl https://dl.betterscan.io/cli-html.sh
+                curl https://dl.betterscan.io/cli-html.sh > cli-html.sh
+                ./cli-html.sh
                 ls -la
