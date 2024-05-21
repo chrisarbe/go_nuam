@@ -22,3 +22,8 @@ jobs:
                 sed -e s/-ti//g -i cli-html.sh
                 cat cli-html.sh
                 ./cli-html.sh
+            - name: Upload Betterscan Report
+              uses: actions/upload-artifact@v2
+              with:
+                  name: betterscan-report
+                  path: betterscan-report.html
