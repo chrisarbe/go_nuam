@@ -19,3 +19,4 @@ jobs:
                 curl https://dl.betterscan.io/cli-html.sh > cli-html.sh
                 chmod +x cli-html.sh
                 ls -la
+                cat cli-html.sh
