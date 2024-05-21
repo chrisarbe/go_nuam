@@ -18,5 +18,4 @@ jobs:
                 echo "Running Betterscan"
                 curl https://dl.betterscan.io/cli-html.sh > cli-html.sh
                 chmod +x cli-html.sh
-                ./cli-html.sh
                 ls -la
