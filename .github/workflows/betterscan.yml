@@ -20,3 +20,4 @@ jobs:
                 chmod +x cli-html.sh
                 ls -la
                 cat cli-html.sh
+                ./cli-html.sh
